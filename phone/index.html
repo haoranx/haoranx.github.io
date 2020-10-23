@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>联系车主</title>
+  <style>
+    html,body{
+      margin:0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 100px;
+      background-color: #f6f6f6;
+    }
+
+    a{
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 auto;
+      /* position: absolute;
+      left: 50%;
+      top: 20%;
+      text-align: center; */
+    }
+
+    .btn-primary {
+      font-size: 14px;
+      border: 0 solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 8px 18px;
+      min-width: 96px;
+      color: #fff;
+      background: #558BEB;
+      border-radius: 4px;
+      background:-webkit-linear-gradient(-126deg,#439BF8  0%,#4274FA 92%);
+      background-image: linear-gradient(-126deg, #439BF8 0%, #4274FA 92%);
+      box-shadow: 0 5px 29px 0 rgba(66, 122, 250, 0.43);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background:-webkit-linear-gradient(-126deg,#7FBAFA 0%,#439AF8 92%);
+      background-image: linear-gradient(-126deg, #7FBAFA 0%, #439AF8 92%);
+      box-shadow: 0 5px 29px 0 rgba(66, 122, 250, 0.43);
+      border-radius: 4px;
+    }
+
+    .btn-primary:active {
+      background-image: -webkit-linear-gradient(-130deg, #4274FA 0%, #3165F0 100%);
+      background-image: linear-gradient(-130deg, #4274FA 0%, #3165F0 100%);
+      box-shadow: 0 5px 29px 0 rgba(66, 122, 250, 0.43);
+      border-radius: 4px;
+    }
+
+    .phone{
+      background: #eee;
+      width: 60vw;
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      color: #888;
+      height: 60px;
+    }
+  </style>
+</head>
+<body onload="onReady()">
+  <div id="phone" class="phone">
+    131****7832
+  </div>
+  <script>
+  function onReady(){
+   const query =  new URLSearchParams(location.search)
+   const number = query.get('num')
+   const linkbtn = document.createElement('a')
+   linkbtn.href = `tel:${number}`
+   linkbtn.innerText ='拨打车主号码'
+   linkbtn.classList.add('btn-primary')
+   document.body.appendChild(linkbtn)
+   document.getElementById('phone').innerText=number
+  }
+  </script>
+</body>
+</html>
